@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'BladeRunner';
+  src: url('/fonts/BLADRMF_.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ethnocentric';
+  src: url('/fonts/Ethnocentric Rg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SpaceBT';
+  src: url('/fonts/SpaceBT-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceCodePro';
+  src: url('/fonts/SourceCodePro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-heading: "SpaceBT", "Orbitron", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+  --font-logo: "BladeRunner", sans-serif;
+}
+
+.font-logo {
+  font-family: "BladeRunner", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-body antialiased selection:bg-slate-900 selection:text-slate-100 transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    @apply uppercase tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-slate-900 text-slate-100 font-bold py-5 px-10 uppercase tracking-[0.2em] text-lg transition-all duration-200 hover:bg-slate-800 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed text-center inline-block cursor-pointer rounded-lg shadow-sm;
+  }
+
+  .input-field {
+    @apply w-full p-4 border-2 border-slate-900 bg-white text-slate-900 text-lg transition-all focus:outline-none focus:bg-slate-50 focus:border-slate-900 placeholder:text-slate-400 font-medium rounded-md;
+  }
+
+  .divider-thin {
+    @apply w-full h-px bg-slate-200;
+  }
+
+  .divider-thick {
+    @apply w-full h-1.5 bg-slate-900;
+  }
+}
